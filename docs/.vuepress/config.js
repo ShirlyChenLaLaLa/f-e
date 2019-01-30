@@ -35,6 +35,11 @@ module.exports = {
         children: ["/weeklyDigest/20190118"]
       },
       {
+        title: "推荐好书",
+        collapsable: false,
+        children: ["/books/books"]
+      },
+      {
         title: "React Native",
         collapsable: false,
         children: ["/reactNative/dailyBugs","/reactNative/animation"],
