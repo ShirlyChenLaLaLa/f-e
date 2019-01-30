@@ -4,7 +4,7 @@
 函数节流，简单地讲，就是让一个函数无法在很短的时间间隔内连续调用，只有当上一次函数执行后过了你规定的时间间隔，才能进行下一次该函数的调用。
 解决方式很容易想到，就是使用定时器，当我触发一个事件时，先setTimout让这个事件延迟一会再执行，如果在这个时间间隔内又触发了事件，那我们就clear掉原来的定时器，再setTimeout一个新的定时器延迟一会执行，就酱。
 #### 函数节流的实现代码：
-1.JavaScript高级程序设计中的实现方式：
+1. JavaScript高级程序设计中的实现方式：
 ```javascript
 function throttle(method, context) {
     clearTimeout(methor.tId);
@@ -39,6 +39,7 @@ var throttle = function(fn, delay){
 window.onresize = throttle(myFunc, 100);
 ```
 而上面介绍的函数节流，它这个频率就不是50ms之类的，它就是无穷大，只要你能不间断resize，刷个几年它也一次都不执行处理函数。
+
 3. 函数节流升级版
 
  我们可以将以上的函数进行改造，增加第三个参数，即必然触发执行的时间间隔。
