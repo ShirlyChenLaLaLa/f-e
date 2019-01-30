@@ -19,3 +19,23 @@ window  ->  document  -> body -> button
 
 #### 事件委托
 事件委托就是利用冒泡的原理，把事件加到父元素或祖先元素上，触发执行效果。
+
+```javascript
+
+var btn6 = document.getElementById("btn6");
+document.onclick = function(event){
+  event = event || window.event;
+  var target = event.target || event.srcElement;
+  if(target == btn6){
+    alert(btn5.value);
+  }
+}
+
+```
+优点：
+1. 提高JavaScript性能。事件委托可以显著的提高事件的处理速度，减少内存的占用。
+2. 可以实现当新增子对象时无需再次对其绑定事件，对于动态内容部分尤为合适
+
+缺点：
+1. 事件代理的应用常用应该仅限于上述需求下，如果把所有事件都用代理就可能会出现事件误判，即本不应用触发事件的被绑上了事件。
+
