@@ -36,3 +36,6 @@ const styles = EStyleSheet.create({
     },
 })
 ```
+Q: 使用border绘制三角形的时候，ios的三角形和andorid的三角形不一致
+
+A: 将`borderTopWidth: 0` 改为 `borderTopWidth: 10`, 0的表现在ios和andorid上不一样。
