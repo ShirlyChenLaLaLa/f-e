@@ -1,12 +1,12 @@
 ### 那些我遇到的react native的坑
 ---
-Q: android手机使用webview的时候，header被隐藏了
+Q: **android手机使用webview的时候，header被隐藏了**
 
 A: 样式里面加: `elevation: 1`，android里面的elevation，就类似于我们所熟知的zIndex的属性，层级调高了，也就能看见header组件了。
 
 >(Android-only) Sets the elevation of a view, using Android's underlying elevation API. This adds a drop shadow to the item and affects z-order for overlapping views. Only supported on Android 5.0+, has no effect on earlier versions.
 ---
-Q: 在react native里面，如何只对一个长方形的一角设置圆角？
+Q: **在react native里面，如何只对一个长方形的一角设置圆角？**
 
 A: 单独设置
 - borderBottomLeftRadius: number
@@ -37,6 +37,6 @@ const styles = EStyleSheet.create({
 })
 ```
 ---
-Q: 使用border绘制三角形的时候，ios的三角形和andorid的三角形不一致
+Q: **使用border绘制三角形的时候，ios的三角形和andorid的三角形不一致**
 
 A: 将`borderTopWidth: 0` 改为 `borderTopWidth: 10`, 0的表现在ios和andorid上不一样。
