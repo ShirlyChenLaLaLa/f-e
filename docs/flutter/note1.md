@@ -1,6 +1,7 @@
-### 《flutter技术入门与实战》的chapter 1读书笔记——flutter的基础知识
+### 读书笔记——flutter的基础知识
+《flutter技术入门与实战》的chapter1
 ---
-####入口程序
+#### 入口程序
 在dart语言中，`main()`函数是Dart语言的入口，调用的runApp函数是Flutter的入口。
 此处不难理解，Flutter是Dart语言的移动框架，如果不调用runApp函数，那你执行的就是一个Dart控制台应用。
 ```Dart
@@ -25,8 +26,10 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
 #### Material Design 设计风格
 每个dart文件的第一行都会导入一个叫`flutter/material.dart`的包，这个包就是Fultter实现Marterial Design风格的基础包，包含Text,Icon,Image,Row等，可以理解为组件库，Material Design是谷歌推出的一套视觉设计语言，就跟你qq，网易云音乐换可爱风的皮服一样，而Material Design是谷歌风而已。
+
 #### Flutter的主题
 我们可以定制主题来让我们的app中使用同一套颜色和字体样式等等，可以定制全局主题或者是局部主题。
 ```Dart
@@ -101,3 +104,5 @@ class MyHomePage extends StatelessWidget {
 最后，使用该主题，函数Theme.of(context)可以通过上下文来获取主题，方法是查找最近的主题，如果找不到就找整个应用的主题。
 
 #### 有状态组件和无状态组件
+分为StatelessWidget和StatefulWidget
+[有状态组件——计数器的例子](https://github.com/kangshaojun/flutter-book/blob/master/%E7%AC%AC2%E7%AB%A0Flutter%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/StatelessWidget%E5%92%8CStatefulWidget/main.dart)
