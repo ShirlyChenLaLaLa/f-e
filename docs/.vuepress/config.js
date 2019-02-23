@@ -45,6 +45,11 @@ module.exports = {
         children: ["/reactNative/dailyBugs","/reactNative/animation"],
       },
       {
+        title: "Flutter",
+        collapsable: false,
+        children: ["/flutter/learn","/flutter/note1"],
+      },
+      {
         title: "Node",
         collapsable: false,
         children: ["/node/avoidMemoryLeak"]
