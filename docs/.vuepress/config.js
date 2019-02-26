@@ -23,6 +23,32 @@ module.exports = {
     activeHeaderLinks: false,
     sidebarDepth: 2,
     lastUpdated: "上次更新",
+    personalInfo: {
+      nickname: 'meteorlxy',
+      description: 'Happy Coding<br/>Happy Life',
+      email: 'meteor.lxy@foxmail.com',
+      location: 'Xi\'an City, China',
+      organization: 'Xi\'an Jiao Tong University',
+      avator: '/assets/img/avator.jpg',
+      sns: {
+        github: {
+          account: 'ShirlyChenLaLaLa',
+          link: 'https://github.com/ShirlyChenLaLaLa'
+        },
+        linkedin: {
+          account: 'meteorlxy',
+          link: 'http://www.linkedin.com/in/meteorlxy'
+        },
+        twitter: {
+          account: 'meteorlxy_cn',
+          link: 'https://twitter.com/meteorlxy_cn'
+        },
+        weibo: {
+          account: '@焦炭君_Meteor',
+          link: 'https://weibo.com/u/2039655434'
+        }
+      }
+    },
     nav: [{ text: "github", link: "https://github.com/ShirlyChenLaLaLa" }],
     sidebar: [
       {
@@ -73,3 +99,4 @@ module.exports = {
     ]
   }
 };
+
