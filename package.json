@@ -7,6 +7,6 @@
     "vuepress": "^0.14.8"
   },
   "dependencies": {
-    "vuepress-theme-meteorlxy": "^1.0.0-alpha.13"
+    "vuepress-theme-meteorlxy": "^0.2.7"
   }
 }
