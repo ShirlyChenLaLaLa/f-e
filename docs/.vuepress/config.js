@@ -2,7 +2,7 @@ module.exports = {
   base: "/f-e/",
   title: "一只小前端的进阶之路",
   description: "一只小前端的进阶之路",
-  theme: 'meteorlxy',
+  // theme: 'meteorlxy',
   ga: "UA-132397402-1",
   head: [
     ["link", { rel: "icon", href: `/logo.png` }],
@@ -23,18 +23,23 @@ module.exports = {
     activeHeaderLinks: false,
     sidebarDepth: 2,
     lastUpdated: "上次更新",
-    personalInfo: {
-      nickname: 'meteorlxy',
-      description: 'Happy Coding<br/>Happy Life',
-      avator: '/assets/img/avator.jpg',
-      sns: {
-        github: {
-          account: 'ShirlyChenLaLaLa',
-          link: 'https://github.com/ShirlyChenLaLaLa'
-        },
-      }
-    },
+    // personalInfo: {
+    //   nickname: 'shirlychenlalala',
+    //   description: 'Happy Coding<br/>Happy Life',
+    //   avator: '/assets/img/avator.jpg',
+    //   sns: {
+    //     github: {
+    //       account: 'ShirlyChenLaLaLa',
+    //       link: 'https://github.com/ShirlyChenLaLaLa'
+    //     },
+    //   }
+    // },
     nav: [{ text: "github", link: "https://github.com/ShirlyChenLaLaLa" }],
+    // nav: [
+    //   { text: 'Home', link: '/', exact: true },
+    //   { text: 'Posts', link: '/posts/', exact: false  },
+    //   { text: 'About', link: '/about/', exact: false  }, 
+    // ],
     sidebar: [
       {
         title: "简介",
