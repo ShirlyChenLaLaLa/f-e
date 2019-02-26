@@ -2,6 +2,7 @@ module.exports = {
   base: "/f-e/",
   title: "一只小前端的进阶之路",
   description: "一只小前端的进阶之路",
+  theme: 'meteorlxy',
   ga: "UA-132397402-1",
   head: [
     ["link", { rel: "icon", href: `/logo.png` }],
