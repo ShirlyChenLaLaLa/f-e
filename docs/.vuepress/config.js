@@ -74,7 +74,7 @@ module.exports = {
       {
         title: "Js 基础要打牢",
         collapsable: false,
-        children: ["/js/throttle"]
+        children: ["/js/throttle", "/js/debounce", "/js/events/"]
       },
       {
         title: "TypeScript",
