@@ -48,3 +48,6 @@ A: 在元素上加上`pointerEvents="none"`的属性
 ```javascript
 <Animated.View style={[styles.tooltipWrapper, this.wrapperPositionStyle(), animateTextTip]} pointerEvents="none">
 ```
+
+Q: **Tried to register two views with the same name XXX(现有组件)**
+A: React Native starting from version 0.49 triggers this error if you are trying to call requireNativeComponent() for same component more than once. Even if they are called from different modules.
