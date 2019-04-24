@@ -49,7 +49,7 @@ module.exports = {
       {
         title: "每周好文",
         collapsable: false,
-        children: ["/weeklyDigest/敲有意思"]
+        children: ["/weeklyDigest/weekly"]
       },
       {
         title: "推荐好书",
