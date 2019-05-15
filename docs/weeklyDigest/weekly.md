@@ -67,3 +67,19 @@
 ### 20190418
 ---
 - [代码改微信运动步数，后果是被微信🈲发朋友圈10天](https://www.jianshu.com/p/1f278e47d4e1)
+
+### 20190426
+---
+- [去掉小数点为什么不要用parseInt](https://medium.com/dailyjs/number-truncation-in-javascript-196c067b0d55)（Math.trunc()）
+- [贝塞尔曲线扫盲](http://www.html-js.com/article/1628)
+
+### 20190503
+---
+- [What's New in JavaScript](https://segmentfault.com/a/1190000019147365?utm_source=weekly&utm_medium=email&utm_campaign=email_weekly)
+
+
+### 20190510
+
+### 20190517
+---
+- [必须要懂的web安全](https://segmentfault.com/a/1190000019158228?utm_source=weekly&utm_medium=email&utm_campaign=email_weekly)
