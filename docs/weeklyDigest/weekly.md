@@ -83,3 +83,8 @@
 ### 20190517
 ---
 - [必须要懂的web安全](https://segmentfault.com/a/1190000019158228?utm_source=weekly&utm_medium=email&utm_campaign=email_weekly)
+
+### 20190524
+---
+- [小程序如何生成海报](https://segmentfault.com/a/1190000019083548)
+- [nginx小知识](https://segmentfault.com/a/1190000018454271#articleHeader3)
