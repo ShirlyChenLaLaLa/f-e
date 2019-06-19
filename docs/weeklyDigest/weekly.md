@@ -88,3 +88,9 @@
 ---
 - [小程序如何生成海报](https://segmentfault.com/a/1190000019083548)
 - [nginx小知识](https://segmentfault.com/a/1190000018454271#articleHeader3)
+
+### 20190621
+---
+- [数学之美番外篇：快排为什么那样快](http://mindhacks.cn/2008/06/13/why-is-quicksort-so-quick/)
+- [js实现一个快速排序](https://juejin.im/post/5966f57051882568b20dc3e1)
+- [有趣的称球问题](https://zh.wikipedia.org/wiki/%E7%A8%B1%E7%90%83%E5%95%8F%E9%A1%8C)
