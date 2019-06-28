@@ -94,3 +94,8 @@
 - [数学之美番外篇：快排为什么那样快](http://mindhacks.cn/2008/06/13/why-is-quicksort-so-quick/)
 - [js实现一个快速排序](https://juejin.im/post/5966f57051882568b20dc3e1)
 - [有趣的称球问题](https://zh.wikipedia.org/wiki/%E7%A8%B1%E7%90%83%E5%95%8F%E9%A1%8C)
+
+### 20190628
+---
+- [手写一个自己的Promise](https://juejin.im/post/5b5d0ac5f265da0f574df709)
+- [手写一个自己的Promise](https://juejin.im/post/5c41297cf265da613356d4ec)
