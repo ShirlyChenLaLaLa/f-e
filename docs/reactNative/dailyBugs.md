@@ -63,7 +63,7 @@ window.scroll(0, 1);
 Q: **App和webview如何通信**
 A: Webview里面的onMessage属性。
 ```
-// 监听web的事件
+// app监听web的事件
 onMessage = (message) => {
     data = JSON.parse(message);
     this.executeEventListener(data.event, data.data);
@@ -72,12 +72,15 @@ onMessage = (message) => {
     }
 }
 
-// 向web发送事件
+// app向web发送事件
 dispatchEvent(eventName, params = {}) {
     const script = `document.dispatchEvent(
         new CustomEvent('${eventName}', {detail: ${JSON.stringify(params)}})
     );`;
     this.webviewElement.injectJavaScript(script);
 }
-this.dispatchEvent('payResult', { result: false });
+this.dispatchEvent('your event name', { result: 'something you want to post to web' });
+
+// web监听app的事件
+document.addEventListener('your event name', callback);
 ```
