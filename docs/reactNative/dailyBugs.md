@@ -51,3 +51,33 @@ A: 在元素上加上`pointerEvents="none"`的属性
 
 Q: **Tried to register two views with the same name XXX(现有组件)**
 A: React Native starting from version 0.49 triggers this error if you are trying to call requireNativeComponent() for same component more than once. Even if they are called from different modules.
+
+Q: **当在webview里面滚动时使用position: fixed在ios上显示效果不佳**
+A: 粗暴解决：
+```
+window.scroll(0, 1);
+```
+或者
+[stackoverflow的解决方式](https://stackoverflow.com/questions/46400680/fixed-header-disappear-when-scrolling-down-in-webview-in-ios-11/46488283#46488283)
+
+Q: **App和webview如何通信**
+A: Webview里面的onMessage属性。
+```
+// 监听web的事件
+onMessage = (message) => {
+    data = JSON.parse(message);
+    this.executeEventListener(data.event, data.data);
+    if (data.event === 'web posted event') {
+      this.payment(data.data[your transferred key]);
+    }
+}
+
+// 向web发送事件
+dispatchEvent(eventName, params = {}) {
+    const script = `document.dispatchEvent(
+        new CustomEvent('${eventName}', {detail: ${JSON.stringify(params)}})
+    );`;
+    this.webviewElement.injectJavaScript(script);
+}
+this.dispatchEvent('payResult', { result: false });
+```
