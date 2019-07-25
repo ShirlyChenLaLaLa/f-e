@@ -103,3 +103,9 @@
 ### 20190705
 ---
 - [什么是在线代理](https://github.com/EtherDream/jsproxy/blob/master/docs/blogs/js-hook.md)
+- [Kubernetes 儿童插图指南](https://juejin.im/post/5d1b2a656fb9a07edc0b7058)
+
+### 20190726
+---
+- [不在constructor里面写state啦，更为简洁](https://v8.dev/features/class-fields)（#表示私有字段）
+- [正确学习react hooks的姿势](https://www.valentinog.com/blog/hooks/#React_Hooks_Tutorial_for_Beginners_what_you_will_learn)
