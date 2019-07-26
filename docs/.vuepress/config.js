@@ -59,7 +59,7 @@ module.exports = {
       {
         title: "React Native",
         collapsable: false,
-        children: ["/reactNative/dailyBugs","/reactNative/animation"],
+        children: ["/reactNative/dailyBugs","/reactNative/animation", "/reactNative/reactHooks"],
       },
       {
         title: "Flutter",

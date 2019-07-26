@@ -109,3 +109,4 @@
 ---
 - [不在constructor里面写state啦，更为简洁](https://v8.dev/features/class-fields)（#表示私有字段）
 - [正确学习react hooks的姿势](https://www.valentinog.com/blog/hooks/#React_Hooks_Tutorial_for_Beginners_what_you_will_learn)
+- [useEffect 完整指南](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/#tldr)(深度理解react hook)
