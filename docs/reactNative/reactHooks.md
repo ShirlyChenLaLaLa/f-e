@@ -25,7 +25,7 @@ useState 会返回俩个值：当前状态和一个让你更新它的函数，�
 ## useEffect
 
 > useEffect与react class 里面的componentDidMount，componentDidupdate，和componentWillUnmount功能目的相同，但统一为单个API
-
+``` javascript
     import React, { useState, useEffect } from "react";
     export default function DataLoader() {
       const [data, setData] = useState([]);
@@ -44,7 +44,7 @@ useState 会返回俩个值：当前状态和一个让你更新它的函数，�
         </div>
       );
     }
-
+```
 ### useEffect 做了什么？
 
 通过使用这个 Hook，你可以告诉 React 组件需要在渲染后执行某些操作。React 会保存你传递的函数（我们将它称之为 “effect”），并且在执行 DOM 更新之后调用它。
@@ -58,7 +58,7 @@ useState 会返回俩个值：当前状态和一个让你更新它的函数，�
 Hook 允许我们按照代码的用途分离他们。
 
 例如：
-
+``` javascript
     function FriendStatusWithCounter(props) {
       const [count, setCount] = useState(0);
       useEffect(() => {
@@ -78,21 +78,22 @@ Hook 允许我们按照代码的用途分离他们。
       });
       // ...
     }
+```
 
 ### 如何跳过对effect的调用？
 
 如果某些特定值在两次重渲染之间没有发生变化，你可以通知 React 跳过对 effect 的调用，只要传递数组作为 useEffect 的第二个可选参数即可：
-
+``` javascript
     useEffect(() => {
       document.title = `You clicked ${count} times`;
     }, [count]); // 仅在 count 更改时更新
-
+```
 当第二个参数传[]的时候，userEffect就跟componentDidMount和componentWillUnmount的思维模式没啥两样了。
 
 ## UseReducer（额外的hook，特殊情况下可能会用到）
 
 useState 的替代方案。它接收一个形如 (state, action) => newState 的 reducer，并返回当前的 state 以及与其配套的 dispatch 方法。
-
+``` javascript
     const [state, dispatch] = useReducer(reducer, initialArg, init);
 
     function Counter({ step }) {
@@ -115,7 +116,7 @@ useState 的替代方案。它接收一个形如 (state, action) => newState 的
     	
     	return <h1>{count}</h1>
     }
-
+```
 这种模式会使一些优化失效，所以应该避免滥用它，react保证dispatch在每次渲染中都是一样的。所以可以在依赖中去掉，它不会引起effect不必要的重复执行。
 
 当dispatch的时候，React只是记住了action- 它会在下一次渲染中再次调用reducer。在那个时候，新的props就可以被访问到，而且reducer的调用也不是在effect里面。
@@ -127,13 +128,13 @@ useState 的替代方案。它接收一个形如 (state, action) => newState 的
 ## useCallback （类似shouldComponentUpdate）
 
 它返回一个 memoized 回调函数。
-
+``` javascript
     const memoizedCallback = useCallback(
     	() => {
     		doSomething(a, b);
     	}, [a, b],
     )
-
+```
 把内联回调函数及依赖项数组作为参数传入 useCallback，它将返回该回调函数的 memoized 版本，该回调函数仅在某个依赖项改变时才会更新。当你把回调函数传递给经过优化的并使用引用相等性去避免非必要渲染（例如 shouldComponentUpdate）的子组件时，它将非常有用。
 
 useCallback本质上是添加了一层依赖检查。它以另一种方式解决了问题 - 我们使函数本身只在需要的时候才改变，而不是去掉对函数的依赖。
@@ -143,13 +144,13 @@ useCallback本质上是添加了一层依赖检查。它以另一种方式解决
 类似useCallback，useMemo可以让我们对复杂对象做类似的事情。
 
 与useCallback不同的是，它返回一个memoized值。
-
+``` javascript
     function ColorPicker() {
     	const [color, setColor] = useState('pink');
     	const style = useMemo(() => ({ color }), [color]);
     	return <Child style={style} />;
     }
-
+```
 
 - [useEffect完整指南](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/#tldr)
 - [react hooks官方文档](https://reactjs.org/docs/hooks-reference.html)
