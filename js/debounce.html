@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>函数防抖 | 一只小前端的进阶之路</title>
+    <meta name="description" content="一只小前端的进阶之路">
+    <link rel="icon" href="/f-e/logo.png">
+  <link rel="manifest" href="/f-e/manifest.json">
+  <meta name="theme-color" content="#fd8649">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="msapplication-TileColor" content="#1f1f1f">
+    
+    <link rel="preload" href="/f-e/assets/css/0.styles.d56124ba.css" as="style"><link rel="preload" href="/f-e/assets/js/app.4e2209a6.js" as="script"><link rel="preload" href="/f-e/assets/js/12.a828e7e2.js" as="script"><link rel="prefetch" href="/f-e/assets/js/10.6e8f95e1.js"><link rel="prefetch" href="/f-e/assets/js/11.3bf30aa6.js"><link rel="prefetch" href="/f-e/assets/js/13.213e73cf.js"><link rel="prefetch" href="/f-e/assets/js/14.ab4e571f.js"><link rel="prefetch" href="/f-e/assets/js/15.1ee47987.js"><link rel="prefetch" href="/f-e/assets/js/16.be005b4f.js"><link rel="prefetch" href="/f-e/assets/js/17.8b23cf7f.js"><link rel="prefetch" href="/f-e/assets/js/18.db6eefee.js"><link rel="prefetch" href="/f-e/assets/js/19.e338765a.js"><link rel="prefetch" href="/f-e/assets/js/2.1c9124a9.js"><link rel="prefetch" href="/f-e/assets/js/20.c083d059.js"><link rel="prefetch" href="/f-e/assets/js/21.8cf3710f.js"><link rel="prefetch" href="/f-e/assets/js/22.19e56645.js"><link rel="prefetch" href="/f-e/assets/js/3.9d180b02.js"><link rel="prefetch" href="/f-e/assets/js/4.e94a2474.js"><link rel="prefetch" href="/f-e/assets/js/5.21c26c69.js"><link rel="prefetch" href="/f-e/assets/js/6.3b3d0c6f.js"><link rel="prefetch" href="/f-e/assets/js/7.1a372854.js"><link rel="prefetch" href="/f-e/assets/js/8.d145c301.js"><link rel="prefetch" href="/f-e/assets/js/9.88e66a76.js">
+    <link rel="stylesheet" href="/f-e/assets/css/0.styles.d56124ba.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/f-e/" class="home-link router-link-active"><!----> <span class="site-name">一只小前端的进阶之路</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/ShirlyChenLaLaLa" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/ShirlyChenLaLaLa" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>简介</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/f-e/" class="sidebar-link">简介</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>每周好文</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/f-e/weeklyDigest/weekly.html" class="sidebar-link">敲有意思</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>推荐好书</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/f-e/books/books.html" class="sidebar-link">推荐书籍</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>React Native</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/f-e/reactNative/dailyBugs.html" class="sidebar-link">那些我遇到的react native的坑</a></li><li><a href="/f-e/reactNative/animation.html" class="sidebar-link">React Native 动画（Animated）</a></li><li><a href="/f-e/reactNative/reactHooks.html" class="sidebar-link">理解hooks</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Flutter</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/f-e/flutter/learn.html" class="sidebar-link">flutter</a></li><li><a href="/f-e/flutter/note1.html" class="sidebar-link">读书笔记——flutter的基础知识</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Node</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/f-e/node/avoidMemoryLeak.html" class="sidebar-link">node如何避免内存泄漏</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading open"><span>Js 基础要打牢</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/f-e/js/throttle.html" class="sidebar-link">函数节流</a></li><li><a href="/f-e/js/debounce.html" class="active sidebar-link">函数防抖</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/f-e/js/events.html" class="sidebar-link">事件的一些小知识</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>TypeScript</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/f-e/typescript/learn.html" class="sidebar-link">books</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Graphql</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/f-e/graphql/learn.html" class="sidebar-link">apollo</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h3 id="函数防抖"><a href="#函数防抖" aria-hidden="true" class="header-anchor">#</a> 函数防抖</h3> <hr> <p><em>函数防抖就是别人给了你一嘴巴子，还没来得及揉，又给了一嘴巴子。函数节流就是你时不时就捂着脸，别人难以下手。</em></p> <h4 id="函数防抖的原理："><a href="#函数防抖的原理：" aria-hidden="true" class="header-anchor">#</a> 函数防抖的原理：</h4> <p>函数防抖：防抖动是将多次执行变为最后一次执行。当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时间到来之前，又一次触发了事件，就重新开始延时。</p> <h4 id="函数节流的实现代码："><a href="#函数节流的实现代码：" aria-hidden="true" class="header-anchor">#</a> 函数节流的实现代码：</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// Returns a function, that, as long as it continues to be invoked, will not</span>
+<span class="token comment">// be triggered. The function will be called after it stops being called for</span>
+<span class="token comment">// N milliseconds. If `immediate` is passed, trigger the function on the</span>
+<span class="token comment">// leading edge, instead of the trailing.</span>
+<span class="token comment">// 函数去抖（连续事件触发结束后只触发一次）</span>
+<span class="token comment">// sample 1: _.debounce(function(){}, 1000)</span>
+<span class="token comment">// 连续事件结束后的 1000ms 后触发</span>
+<span class="token comment">// sample 1: _.debounce(function(){}, 1000, true)</span>
+<span class="token comment">// 连续事件触发后立即触发（此时会忽略第二个参数）</span>
+_<span class="token punctuation">.</span><span class="token function-variable function">debounce</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>func<span class="token punctuation">,</span> wait<span class="token punctuation">,</span> immediate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> timeout<span class="token punctuation">,</span> args<span class="token punctuation">,</span> context<span class="token punctuation">,</span> timestamp<span class="token punctuation">,</span> result<span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> <span class="token function-variable function">later</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 定时器设置的回调 later 方法的触发时间，和连续事件触发的最后一次时间戳的间隔</span>
+    <span class="token comment">// 如果间隔为 wait（或者刚好大于 wait），则触发事件</span>
+    <span class="token keyword">var</span> last <span class="token operator">=</span> _<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> timestamp<span class="token punctuation">;</span>
+
+    <span class="token comment">// 时间间隔 last 在 [0, wait) 中</span>
+    <span class="token comment">// 还没到触发的点，则继续设置定时器</span>
+    <span class="token comment">// last 值应该不会小于 0 吧？</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>last <span class="token operator">&lt;</span> wait <span class="token operator">&amp;&amp;</span> last <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      timeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>later<span class="token punctuation">,</span> wait <span class="token operator">-</span> last<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 到了可以触发的时间点</span>
+      timeout <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+      <span class="token comment">// 可以触发了</span>
+      <span class="token comment">// 并且不是设置为立即触发的</span>
+      <span class="token comment">// 因为如果是立即触发（callNow），也会进入这个回调中</span>
+      <span class="token comment">// 主要是为了将 timeout 值置为空，使之不影响下次连续事件的触发</span>
+      <span class="token comment">// 如果不是立即执行，随即执行 func 方法</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>immediate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 执行 func 函数</span>
+        result <span class="token operator">=</span> func<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 这里的 timeout 一定是 null 了吧</span>
+        <span class="token comment">// 感觉这个判断多余了</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>timeout<span class="token punctuation">)</span>
+          context <span class="token operator">=</span> args <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// 嗯，闭包返回的函数，是可以传入参数的</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 可以指定 this 指向</span>
+    context <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+    args <span class="token operator">=</span> arguments<span class="token punctuation">;</span>
+
+    <span class="token comment">// 每次触发函数，更新时间戳</span>
+    <span class="token comment">// later 方法中取 last 值时用到该变量</span>
+    <span class="token comment">// 判断距离上次触发事件是否已经过了 wait seconds 了</span>
+    <span class="token comment">// 即我们需要距离最后一次触发事件 wait seconds 后触发这个回调方法</span>
+    timestamp <span class="token operator">=</span> _<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 立即触发需要满足两个条件</span>
+    <span class="token comment">// immediate 参数为 true，并且 timeout 还没设置</span>
+    <span class="token comment">// immediate 参数为 true 是显而易见的</span>
+    <span class="token comment">// 如果去掉 !timeout 的条件，就会一直触发，而不是触发一次</span>
+    <span class="token comment">// 因为第一次触发后已经设置了 timeout，所以根据 timeout 是否为空可以判断是否是首次触发</span>
+    <span class="token keyword">var</span> callNow <span class="token operator">=</span> immediate <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>timeout<span class="token punctuation">;</span>
+
+    <span class="token comment">// 设置 wait seconds 后触发 later 方法</span>
+    <span class="token comment">// 无论是否 callNow（如果是 callNow，也进入 later 方法，去 later 方法中判断是否执行相应回调函数）</span>
+    <span class="token comment">// 在某一段的连续触发中，只会在第一次触发时进入这个 if 分支中</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>timeout<span class="token punctuation">)</span>
+      <span class="token comment">// 设置了 timeout，所以以后不会进入这个 if 分支了</span>
+      timeout <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>later<span class="token punctuation">,</span> wait<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 如果是立即触发</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>callNow<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// func 可能是有返回值的</span>
+      result <span class="token operator">=</span> func<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// 解除引用</span>
+      context <span class="token operator">=</span> args <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="函数防抖的应用场景"><a href="#函数防抖的应用场景" aria-hidden="true" class="header-anchor">#</a> 函数防抖的应用场景</h4> <p>对于函数防抖，有如下几个场景：</p> <ul><li>每次 resize/scroll 触发统计事件</li> <li>文本输入的验证（连续输入文字后发送 AJAX 请求进行验证，验证一次就好）</li></ul></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">3/4/2019, 5:39:03 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/f-e/js/throttle.html" class="prev">
+          函数节流
+        </a></span> <span class="next"><a href="/f-e/js/events.html">
+          事件的一些小知识
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/f-e/assets/js/app.4e2209a6.js" defer></script><script src="/f-e/assets/js/12.a828e7e2.js" defer></script>
+  </body>
+</html>
