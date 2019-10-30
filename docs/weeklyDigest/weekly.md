@@ -110,3 +110,19 @@
 - [不在constructor里面写state啦，更为简洁](https://v8.dev/features/class-fields)（#表示私有字段）
 - [正确学习react hooks的姿势](https://www.valentinog.com/blog/hooks/#React_Hooks_Tutorial_for_Beginners_what_you_will_learn)
 - [useEffect 完整指南](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/#tldr)(深度理解react hook)
+
+### 20190802
+- [一张图一个css知识点](https://github.com/qdlaoyao/css-gif)
+
+### 20190912
+- [fab 了解一下](https://fabs.dev/)
+- [Frontend Application Bundles: The Docker of Frontend - Glen Maddern - React Rally 2019](https://www.youtube.com/watch?v=9WaqB90kWwc&list=PLUD4kD-wL_zaXhR4KU1CkUSIzh1TrvnzA&index=2)
+
+### 20190920
+- [CORS 简单请求+预检请求（彻底理解跨域）](https://github.com/amandakelake/blog/issues/62)
+
+### 20191009
+- [全面了解 React Suspense 和 Hooks](https://mp.weixin.qq.com/s/XRBX1dRKltJgIzG2dK-wYw)(终于理解了为什么不要在componentwillmount里面做请求)
+
+### 20191030
+- [WebView性能、体验分析与优化](https://tech.meituan.com/2017/06/09/webviewperf.html)

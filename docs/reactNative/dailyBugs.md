@@ -88,3 +88,26 @@ this.dispatchEvent('your event name', { result: 'something you want to post to w
 // web监听app的事件
 document.addEventListener('your event name', callback);
 ```
+Q: How to debug react native webView？
+
+A: [https://github.com/react-native-community/react-native-webview/blob/master/docs/Debugging.md#android--chrome](https://github.com/react-native-community/react-native-webview/blob/master/docs/Debugging.md#android--chrome)
+
+Q: KeyboardAvoidingView has no effect on multiline TextInput
+
+A: [https://github.com/facebook/react-native/issues/16826](https://github.com/facebook/react-native/issues/16826)
+
+If you want to KeyboardAvoidingView works fine with multiline TextInput,please setting the scrollEnabled prop of TextInput to false.
+```
+    <KeyboardAvoiding style={{**flex:1**}} behavior="padding">
+    	<TextInput
+    	  style={styles.reviewComment}
+    	  multiline={true}
+    	  numberOfLines={10}
+    	  maxLength={maxTextLength}
+    	  **scrollEnabled={false}**
+    	  onChangeText={this.onInputComment}
+    	  placeholder={t('student_portal:write_review.comment.place_holder')}
+    	  value={this.state.content}
+    	/>
+    </KeyboardAvoiding>
+```
